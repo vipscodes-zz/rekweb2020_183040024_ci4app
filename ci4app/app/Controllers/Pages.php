@@ -9,9 +9,7 @@ class Pages extends BaseController
         $data = [
             'title' => 'Home | VIP CODE STUDIO'
         ];
-        echo view('layout/header', $data);
-        echo view('pages/home');
-        echo view('layout/footer');
+        return view('pages/home', $data);
     }
 
     public function about()
@@ -19,9 +17,27 @@ class Pages extends BaseController
         $data = [
             'title' => 'About | VIP CODE STUDIO'
         ];
-        echo view('layout/header', $data);
-        echo view('pages/about');
-        echo view('layout/footer');
+        return view('pages/about', $data);
+    }
+
+    public function contact()
+    {
+        $data = [
+            'title' => 'Contact | VIP CODE STUDIO',
+            'alamat' => [
+                [
+                    'tipe' => 'rumah',
+                    'alamat' => 'Jl. Setiabudhi No. 123',
+                    'kota' => 'Bandung'
+                ],
+                [
+                    'tipe' => 'kantor',
+                    'alamat' => 'Jl. Setiabudhi No. 193',
+                    'kota' => 'Bandung'
+                ]
+            ]
+        ];
+        return view('pages/contact', $data);
     }
 
     //--------------------------------------------------------------------
